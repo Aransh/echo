@@ -16,5 +16,5 @@ spec:
   values:
     image:
       repository: gcr.io/echo-270609/echo
-      tag: 1.0
+      tag: 1.0.1
     replicaCount: 3
