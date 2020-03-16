@@ -16,7 +16,7 @@ spec:
   values:
     image:
       repository: gcr.io/echo-270609/echo
-      tag: stg-jxcjxc
+      tag: stg-djdj
     replicaCount: 2
     hpa:
       enabled: true
