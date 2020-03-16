@@ -1,0 +1,22 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: echo-dev
+  namespace: dev
+  annotations:
+    fluxcd.io/automated: "true"
+    filter.fluxcd.io/chart-image: glob:dev-*
+spec:
+  releaseName: echo-dev
+  chart:
+    git: git@github.com:Aransh/echo.git
+    path: charts/echo
+    ref: master
+  values:
+    image:
+      repository: gcr.io/echo-270609/echo
+      tag: dev-hsdjc
+    replicaCount: 1
+    hpa:
+      enabled: false
