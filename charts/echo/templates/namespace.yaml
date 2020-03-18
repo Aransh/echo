@@ -1,6 +1,0 @@
-{{ if eq .Values.logging.enabled true }}
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: kube-logging
-{{ end }}
