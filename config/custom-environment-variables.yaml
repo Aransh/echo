@@ -1,0 +1,5 @@
+port: 'PORT'
+loglevel: info
+persist: 'PERSIST'
+mongodburl: 'MONGODBURL'
+dbname: 'DBNAME'
