@@ -7,10 +7,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh "echo test"
-                // configFileProvider([configFile(fileId: 'artifactory', variable: 'MAVEN_SETTINGS_XML')]) {
-                //     sh "mvn -s $MAVEN_SETTINGS_XML verify"
-                // }
+                sh "docker build -t echo ."
             }
         }
         // stage('test') {
