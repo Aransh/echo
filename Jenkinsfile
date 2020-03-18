@@ -15,6 +15,8 @@ pipeline {
                         TAG=BRANCH_NAME + "-" + GIT_COMMIT.substring(0,6)
                     }
                     sh "docker build -t echo:$TAG ."
+                    sh "docker tag echo:$TAG aransh/echo:$TAG"
+                    sh "docker push aransh/echo:$TAG"
                 }
             }
         }
