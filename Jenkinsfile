@@ -1,13 +1,13 @@
 pipeline {
     agent any
 
-    // triggers {
-    //     gitlab(
-    //         triggerOnPush: true,
-    //         triggerOnMergeRequest: true,
-    //         branchFilterType: 'All',
-    //         addVoteOnMergeRequest: true)
-    // }
+    triggers {
+        git(
+            triggerOnPush: true,
+            triggerOnMergeRequest: true,
+            branchFilterType: 'All',
+            addVoteOnMergeRequest: true)
+    }
     // options {
     //   gitLabConnection('gitlab')
     // }
