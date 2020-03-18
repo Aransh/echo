@@ -48,7 +48,7 @@ const echo = (req, res) => {
     logger.info(`HostName is ${req.headers.host}`)
     res.send(`Echo says: ${input}`)
   }
-}
+} 
 
 app.get('/', (req, res) => echo(req, res))
 
