@@ -7,7 +7,15 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh "docker build -t echo ."
+                script {
+                    if ("$BRANCH_NAME" == "master") {
+                        TAG="1.0." + BUILD_NUMBER
+                    }
+                    else {
+                        TAG=BRANCH_NAME + "-" + GIT_COMMIT.substring(0,6)
+                    }
+                    sh "docker build -t echo:$TAG ."
+                }
             }
         }
         // stage('test') {
