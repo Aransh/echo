@@ -2,15 +2,8 @@ pipeline {
     agent any
 
     triggers {
-        git(
-            triggerOnPush: true,
-            triggerOnMergeRequest: true,
-            branchFilterType: 'All',
-            addVoteOnMergeRequest: true)
+        githubPush()
     }
-    // options {
-    //   gitLabConnection('gitlab')
-    // }
     stages {
         stage('build') {
             steps {
